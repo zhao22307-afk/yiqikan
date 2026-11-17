@@ -1,0 +1,27 @@
+{
+  "Items": [
+    {
+      "Id": "series-1",
+      "Name": "示例剧集",
+      "Type": "Series",
+      "ImageTags": { "Primary": "tag-series" }
+    },
+    {
+      "Id": "movie-1",
+      "Name": "示例电影",
+      "Type": "Movie",
+      "ProductionYear": 2020,
+      "RunTimeTicks": 72000000000,
+      "ImageTags": { "Primary": "tag-movie" },
+      "UserData": { "PlaybackPositionTicks": 0, "Played": false }
+    },
+    {
+      "Id": "ep-1",
+      "Name": "第 1 集",
+      "Type": "Episode",
+      "RunTimeTicks": 15000000000,
+      "UserData": { "PlaybackPositionTicks": 350000000, "Played": false }
+    }
+  ],
+  "TotalRecordCount": 3
+}

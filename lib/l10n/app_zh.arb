@@ -1,0 +1,167 @@
+{
+  "@@locale": "zh",
+  "appName": "一起看",
+  "@appName": {
+    "description": "应用名，显示在桌面标题与关于页"
+  },
+  "homeCreateRoom": "一起看（建房）",
+  "@homeCreateRoom": {
+    "description": "首页右上角图标按钮：作为房主建房"
+  },
+  "homeJoinRoom": "加入房间",
+  "@homeJoinRoom": {
+    "description": "首页图标按钮：输入房间码进房"
+  },
+  "homeScan": "扫码加房",
+  "@homeScan": {
+    "description": "首页图标按钮：扫二维码进房"
+  },
+  "homeSources": "片源",
+  "@homeSources": {
+    "description": "首页图标按钮 + 片源页标题"
+  },
+  "homeSettings": "设置",
+  "@homeSettings": {
+    "description": "首页图标按钮：进入设置页"
+  },
+
+  "roomMembers": "成员",
+  "@roomMembers": {
+    "description": "房间页按钮：打开成员列表"
+  },
+  "roomHost": "房主",
+  "@roomHost": {
+    "description": "成员角色标识：房主"
+  },
+  "roomGuest": "客人",
+  "@roomGuest": {
+    "description": "成员角色标识：客人"
+  },
+  "roomLeave": "离开房间",
+  "@roomLeave": {
+    "description": "房间内退出按钮"
+  },
+  "roomShare": "分享房间",
+  "@roomShare": {
+    "description": "房主菜单项：生成分享链接/二维码"
+  },
+  "roomBot": "房间 Bot",
+  "@roomBot": {
+    "description": "房主菜单项：配置房间机器人"
+  },
+  "roomDanmaku": "弹幕设置",
+  "@roomDanmaku": {
+    "description": "房主菜单项：弹幕开关、字号、速度"
+  },
+  "roomScreenShare": "共享屏幕",
+  "@roomScreenShare": {
+    "description": "房主菜单项：把自己的屏幕共享给房间"
+  },
+
+  "playerPlay": "播放",
+  "@playerPlay": {
+    "description": "播放器按钮无障碍标签"
+  },
+  "playerPause": "暂停",
+  "@playerPause": {
+    "description": "播放器按钮无障碍标签"
+  },
+  "playerSeek": "拖动进度",
+  "@playerSeek": {
+    "description": "播放器进度条无障碍标签"
+  },
+  "playerQuality": "画质",
+  "@playerQuality": {
+    "description": "播放器底部按钮：码率/画质选择"
+  },
+  "playerSubtitle": "字幕",
+  "@playerSubtitle": {
+    "description": "播放器底部按钮：字幕轨与外挂字幕"
+  },
+  "playerFullscreen": "全屏",
+  "@playerFullscreen": {
+    "description": "播放器底部按钮：进入全屏"
+  },
+  "playerDanmaku": "弹幕",
+  "@playerDanmaku": {
+    "description": "播放器底部按钮：弹幕开关"
+  },
+  "playerVoice": "语音",
+  "@playerVoice": {
+    "description": "播放器/房间底部按钮：加入语音"
+  },
+
+  "tabHome": "首页",
+  "@tabHome": {
+    "description": "底部导航第一个 tab"
+  },
+  "tabSources": "片源",
+  "@tabSources": {
+    "description": "片源相关页面的短标题"
+  },
+  "tabLibrary": "我的",
+  "@tabLibrary": {
+    "description": "底部导航第二个 tab：收藏/历史/下载"
+  },
+  "tabSettings": "设置",
+  "@tabSettings": {
+    "description": "设置页标题"
+  },
+  "libFavorites": "收藏",
+  "@libFavorites": {
+    "description": "「我的」第一个 tab：收藏列表"
+  },
+  "libHistory": "历史",
+  "@libHistory": {
+    "description": "「我的」tab：观看历史时间线"
+  },
+  "libDownload": "下载",
+  "@libDownload": {
+    "description": "「我的」tab：下载队列"
+  },
+  "libFollow": "追番",
+  "@libFollow": {
+    "description": "收藏卡片菜单项：加入追番"
+  },
+
+  "setTheme": "外观",
+  "@setTheme": {
+    "description": "设置页：主题（跟随系统/浅色/深色）"
+  },
+  "setFont": "字号",
+  "@setFont": {
+    "description": "设置页：字体缩放三档"
+  },
+  "setLanguage": "语言",
+  "@setLanguage": {
+    "description": "设置页：界面语言（跟随系统/中文/English）"
+  },
+  "setPower": "省电与后台",
+  "@setPower": {
+    "description": "设置页：电池优化白名单与后台行为说明"
+  },
+  "setDiagnose": "诊断",
+  "@setDiagnose": {
+    "description": "设置页：版本/端口/通道/房间/最近错误"
+  },
+  "setUpdate": "检查更新",
+  "@setUpdate": {
+    "description": "设置页：自建更新源检查新版本"
+  },
+  "setBackup": "备份与恢复",
+  "@setBackup": {
+    "description": "设置页：导出/导入 JSON 备份"
+  },
+  "setPermission": "权限",
+  "@setPermission": {
+    "description": "设置页：通知/相册/相机/麦克风/安装未知应用"
+  },
+  "setAbout": "关于",
+  "@setAbout": {
+    "description": "设置页：版本号与开源声明"
+  },
+  "setChannel": "优先通道",
+  "@setChannel": {
+    "description": "设置页：选路策略（自动/仅隧道/仅内网/仅 IPv6）"
+  }
+}

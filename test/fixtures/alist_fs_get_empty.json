@@ -1,0 +1,11 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "name": "c.mp4",
+    "size": 1,
+    "raw_url": "",
+    "url": "",
+    "provider": "WebDAV"
+  }
+}

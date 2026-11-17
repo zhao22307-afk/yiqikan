@@ -1,0 +1,11 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "name": "a.mp4",
+    "size": 12345,
+    "raw_url": "https://cdn.example.com/a.mp4?auth_key=1759000000&sign=abc",
+    "url": "https://alist.example.com/p/a.mp4",
+    "provider": "AliyundriveOpen"
+  }
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  FileProvider 只开真正用到的子目录（21 号 §5：原包四个 provider 里
+  InstallFileProvider 用了 `<root-path path="">`＝整个文件系统根，
+  fileProvider/shareProvider 用了 `external-path path="."`＝整个外部存储，
+  这轮统一收窄）。
+
+  A 组（批 E12）改动：
+  - 删掉 `<external-files-path name="pub_dl" path="." />`（整片外部私有根）
+  - 新增 `<files-path name="update" path="update/" />`：G8 下载的
+    app-release.apk 落在 filesDir/update/ 下，安装器要能通过 FileProvider
+    把这个路径变成 content:// 交给系统 PackageInstaller。
+
+  仍然保持「一目录一条」：没有 path="."，也没有 root-path。
+-->
+<paths>
+    <!-- 分享出去的字幕/日志截图等临时文件 -->
+    <cache-path name="share" path="share/" />
+    <!-- 应用内下载目录（导出日志、缓存片源） -->
+    <cache-path name="downloads" path="downloads/" />
+    <!-- 已落盘的字幕与内嵌抽取产物 -->
+    <files-path name="logs" path="logs/" />
+    <!-- G8 更新包：filesDir/update/app-release.apk -->
+    <files-path name="update" path="update/" />
+    <!-- 外部私有目录子目录：/sdcard/Android/data/<pkg>/files/downloads|share -->
+    <external-files-path name="dl" path="downloads/" />
+    <external-files-path name="share" path="share/" />
+</paths>

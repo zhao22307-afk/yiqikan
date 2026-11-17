@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 一起看：两个交叠的圆＝两个人/两块屏凑到一起，中间叠一个播放三角。
+     底色由 @color/ic_launcher_background(#0B0E14) 提供，这里只画前景；
+     adaptive icon 安全区是中央 18..90，所有图形都收在这个范围里。 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <path
+        android:fillAlpha="0.42"
+        android:fillColor="#4C8DFF"
+        android:pathData="M44,54 m-24,0 a24,24 0 1,0 48,0 a24,24 0 1,0 -48,0" />
+
+    <path
+        android:fillAlpha="0.88"
+        android:fillColor="#4C8DFF"
+        android:pathData="M64,54 m-24,0 a24,24 0 1,0 48,0 a24,24 0 1,0 -48,0" />
+
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M48,40 L48,68 L72,54 Z" />
+</vector>

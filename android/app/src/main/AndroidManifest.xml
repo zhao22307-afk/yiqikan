@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 离线播放所需；INTERNET 仅用于局域网 DLNA/HTTP 与本地缓存代理 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PLAYBACK" />
+    <!-- D20 屏幕共享（第44轮实验）：MediaProjection 要求进程已有该类型的前台服务 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" />
+    <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 语音通话（M8 7b）：进语音要调音频路由（听筒/扬声器/蓝牙），本轮只先声明不申请 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <uses-feature android:name="android.software.picture_in_picture" android:required="false" />
+    <!-- G3：TV 适配只写不设限 —— required 必须 false，写 true 手机就装不上（21 号 §9） -->
+    <uses-feature android:name="android.software.leanback" android:required="false" />
+    <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+
+    <!-- G11：明文流量走显式白名单（res/xml/network_security_config.xml），
+         不再用 android:usesCleartextTraffic="true" 这个全局开关 -->
+    <application
+        android:name="top.yiqikan.app.server.LocalApp"
+        android:label="一起看"
+        android:icon="@mipmap/ic_launcher"
+        android:allowBackup="false"
+        android:fullBackupContent="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:largeHeap="true">
+
+        <!-- Flutter v2 嵌入标记：缺这行 Flutter 工具会判定为已删除的 v1 embedding 并直接拒绝构建 -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+
+        <!-- 显式关掉 Impeller，回到 Skia 合成路径（原包也是这么写的，21 号 §3）。
+             Flutter 3.44 默认开 Impeller，纹理/合成路径与 Skia 不同；
+             M2 的 mpv 纹理重建、M3 的 fvp 出画都是在 Skia 下调通的，
+             不关它，播放器偶发黑屏会变成查不出来的玄学问题。 -->
+        <meta-data
+            android:name="io.flutter.embedding.android.EnableImpeller"
+            android:value="false" />
+
+        <!-- 关掉 Flutter 自带的深链转发：它会把 intent.dataString 原样当路由
+             push 给 GoRouter，`yiqikan://room/226663` 这种不是路由的形式直接落到
+             "页面没找到"。进房要带 pwd、还要记来源，统一由 MainActivity 的
+             top.yiqikan.app/deeplink 通道交给 Dart 解析，这里只保留静态深链（play/sniff）。 -->
+        <meta-data
+            android:name="flutter_deeplinking_enabled"
+            android:value="false" />
+
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/LaunchTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- 关掉 Flutter 自带的深链转发（必须写在 activity 里，引擎读的是这里）：
+                 它会把 intent.dataString 原样当路由 push 给 GoRouter，
+                 `yiqikan://room/226663` 不是路由形式，直接落到"页面没找到"。 -->
+            <meta-data
+                android:name="flutter_deeplinking_enabled"
+                android:value="false" />
+
+            <!-- 深链：用本项目自己的 yiqikan:// scheme，供本地文件/局域网地址唤起 -->
+            <intent-filter android:autoVerify="false">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="yiqikan" />
+            </intent-filter>
+        </activity>
+        <service
+            android:name=".PlaybackService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
+        <!-- D20 屏幕共享：getMediaProjection 的前置条件就是进程里有这个类型的前台服务 -->
+        <service
+            android:name=".server.ScreenShareService"
+            android:enabled="true"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+</manifest>

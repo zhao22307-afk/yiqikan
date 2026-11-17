@@ -1,0 +1,11 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "name": "b.mp4",
+    "size": 999,
+    "raw_url": "",
+    "url": "https://alist.example.com/p/b.mp4",
+    "provider": "Local"
+  }
+}

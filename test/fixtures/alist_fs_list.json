@@ -1,0 +1,13 @@
+{
+  "code": 200,
+  "message": "success",
+  "data": {
+    "content": [
+      { "name": "电影", "size": 0, "is_dir": true, "modified": "2024-01-01T00:00:00Z", "sign": "", "thumb": "" },
+      { "name": "纪录片", "size": 0, "is_dir": true, "modified": "2024-01-02T00:00:00Z", "sign": "", "thumb": "" },
+      { "name": "中文 片名.mkv", "size": 734003200, "is_dir": false, "modified": "2024-01-03T10:20:30Z", "sign": "abc123", "thumb": "https://example.invalid/t.jpg" },
+      { "name": "a.mp4", "size": 12345, "is_dir": false, "modified": "2024-01-04T00:00:00Z", "sign": "def456", "thumb": "" }
+    ],
+    "total": 4
+  }
+}

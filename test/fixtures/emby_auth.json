@@ -1,0 +1,9 @@
+{
+  "User": {
+    "Id": "8f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f",
+    "Name": "demo",
+    "HasPassword": true
+  },
+  "AccessToken": "tok_abcdef0123456789",
+  "ServerId": "srv_1"
+}

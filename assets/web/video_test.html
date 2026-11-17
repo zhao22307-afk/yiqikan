@@ -1,0 +1,27 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- D22 验收页：上下各 2400px 用来验长页面滚动，视频在中间用来验 play/pause/seek。
+     按钮是为了让验收能在 adb 上稳定点到（视频自带的控件在 WebView 里点不准）。 -->
+<body style="margin:0">
+<div style="height:2400px;background:linear-gradient(#fff,#ddd)">
+  <h2 style="padding:12px">yqk video test · 往下滚很长</h2>
+</div>
+<div style="padding:8px;background:#f4f4f4">
+  <button id="bPlay" style="font-size:18px;padding:10px 14px">播放</button>
+  <button id="bPause" style="font-size:18px;padding:10px 14px">暂停</button>
+  <button id="bSeek" style="font-size:18px;padding:10px 14px">跳到 3s</button>
+  <button id="bBack" style="font-size:18px;padding:10px 14px">拖回 0s</button>
+</div>
+<video id="v" src="/local/webvideo"
+       controls playsinline style="width:100%"></video>
+<div style="height:2400px;background:linear-gradient(#ddd,#fff)"></div>
+<script>
+  (function(){
+    var v = document.getElementById('v');
+    document.getElementById('bPlay').onclick = function(){ v.play(); };
+    document.getElementById('bPause').onclick = function(){ v.pause(); };
+    document.getElementById('bSeek').onclick = function(){ v.currentTime = 3; };
+    document.getElementById('bBack').onclick = function(){ v.currentTime = 0; };
+  })();
+</script>
+</body>

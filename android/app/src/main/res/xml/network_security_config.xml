@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  G11 明文流量白名单。
+
+  本 App 要访问用户自配的任意 http 源（MacCMS / 局域网 NAS / 自建服务），
+  所以 base 必须允许明文；但把它写成**显式声明**，并把本地服务与回环单独
+  列出来，未来要收紧时只改这一处（Reviewer 一眼能看到「哪里允许 http」）。
+-->
+<network-security-config>
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- 本地服务（房主手机内置服务）与本机回环：明确列出便于审计 -->
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="false">127.0.0.1</domain>
+        <domain includeSubdomains="false">localhost</domain>
+        <domain includeSubdomains="false">10.0.2.2</domain>
+    </domain-config>
+</network-security-config>

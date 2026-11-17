@@ -1,0 +1,105 @@
+{
+  "success": true,
+  "meta": {
+    "config_name": "示例活动页",
+    "description": "F13 渲染器自测：banner / grid / list / text 四种 block + 若干 action",
+    "revision": 1,
+    "updated_at": "2026-11-14T12:00:00Z"
+  },
+  "blocks": [
+    {
+      "type": "banner",
+      "image": "https://picsum.photos/seed/yiqikan/960/540",
+      "badge": "限时",
+      "title": "一起看 · 周末影院",
+      "subtitle": "点这张大图走 url action",
+      "action": {
+        "type": "url",
+        "url": "https://www.example.com/yiqikan",
+        "open_mode": "externalApplication"
+      }
+    },
+    {
+      "type": "text",
+      "text": "下面的格子点进去会直接播一段片子（video action），列表项则演示 copy / room。",
+      "align": "center",
+      "size": 14
+    },
+    {
+      "type": "grid",
+      "columns": 2,
+      "items": [
+        {
+          "image": "https://picsum.photos/seed/g1/400/560",
+          "title": "深海",
+          "subtitle": "2026 · 动画",
+          "action": {
+            "type": "video",
+            "url": "http://127.0.0.1:8080/local/media/play?path=%2Fsdcard%2FMovies%2Fpromo_long.mkv",
+            "title": "深海"
+          }
+        },
+        {
+          "image": "https://picsum.photos/seed/g2/400/560",
+          "title": "长夜",
+          "subtitle": "2026 · 剧情",
+          "action": {
+            "type": "video",
+            "url": "http://127.0.0.1:8080/local/media/play?path=%2Fsdcard%2FMovies%2Fpromo_long.mkv",
+            "title": "长夜"
+          }
+        },
+        {
+          "image": "https://picsum.photos/seed/g3/400/560",
+          "title": "星图",
+          "subtitle": "2026 · 科幻"
+        },
+        {
+          "image": "https://picsum.photos/seed/g4/400/560",
+          "title": "旧梦",
+          "subtitle": "2026 · 文艺"
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        {
+          "image": "https://picsum.photos/seed/l1/120/168",
+          "title": "复制房间码",
+          "subtitle": "copy action",
+          "action": { "type": "copy", "copy": "884010" }
+        },
+        {
+          "image": "https://picsum.photos/seed/l2/120/168",
+          "title": "一键进房间",
+          "subtitle": "room action（房间不存在会提示）",
+          "action": { "type": "room", "room_code": "884010" }
+        },
+        {
+          "image": "https://picsum.photos/seed/l3/120/168",
+          "title": "打开设置",
+          "subtitle": "page action",
+          "action": { "type": "page", "page": "/settings" }
+        }
+      ]
+    },
+    {
+      "type": "notice",
+      "text": "这是一条 info 提示条：活动页不抢播放注意力，出现异常只跳过单个 block。",
+      "tone": "info"
+    },
+    {
+      "type": "buttons",
+      "label": "立即参与",
+      "style": "filled",
+      "action": { "type": "url", "url": "https://www.example.com/join" }
+    },
+    {
+      "type": "bullets",
+      "bullets": ["未知 block 会跳过并打 warn", "未知 action 同理", "配错一个 block 不毁整页"]
+    },
+    { "type": "divider" },
+    { "type": "spacer", "size": 24 }
+  ]
+}

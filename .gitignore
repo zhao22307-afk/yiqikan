@@ -1,0 +1,62 @@
+# ============================================================
+# 一起看 — 提交前必读
+# 这个文件的存在意义是：让 clone 下来的人能构建，但不含任何
+# 私钥、密码、个人路径、设备号。
+# ============================================================
+
+# ---------- 密钥与本地配置（绝不提交） ----------
+android/keystore/
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+android/local.properties
+.env
+.env.*
+google-services.json
+firebase_options.dart
+
+# ---------- Flutter / Gradle 产物 ----------
+.dart_tool/
+.packages
+build/
+.gradle/
+*.iml
+.flutter-plugins
+.flutter-plugins-dependencies
+android/.gradle/
+
+# ---------- 安卓产物 ----------
+android/app/build/
+android/app/release/
+android/app/debug/
+android/app/profile/
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# ---------- 系统 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---------- 编辑器 ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ---------- 日志 / 临时 / 备份 ----------
+*.log
+*.bak
+*.tmp
+*.orig
+auto
+
+# JVM heap dump / debug dumps
+*.hprof
+hs_err_pid*
+replay_pid*

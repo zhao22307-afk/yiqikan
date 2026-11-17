@@ -1,0 +1,167 @@
+{
+  "@@locale": "en",
+  "appName": "Watch Together",
+  "@appName": {
+    "description": "App name shown on the launcher and the About page"
+  },
+  "homeCreateRoom": "Start a room",
+  "@homeCreateRoom": {
+    "description": "Home toolbar button: host a room"
+  },
+  "homeJoinRoom": "Join a room",
+  "@homeJoinRoom": {
+    "description": "Home toolbar button: enter a room code"
+  },
+  "homeScan": "Scan code",
+  "@homeScan": {
+    "description": "Home toolbar button: scan a QR code to join"
+  },
+  "homeSources": "Sources",
+  "@homeSources": {
+    "description": "Home toolbar button and the sources page title"
+  },
+  "homeSettings": "Settings",
+  "@homeSettings": {
+    "description": "Home toolbar button: open settings"
+  },
+
+  "roomMembers": "Members",
+  "@roomMembers": {
+    "description": "In-room button: open the member list"
+  },
+  "roomHost": "Host",
+  "@roomHost": {
+    "description": "Member role label: the host"
+  },
+  "roomGuest": "Guest",
+  "@roomGuest": {
+    "description": "Member role label: a guest"
+  },
+  "roomLeave": "Leave room",
+  "@roomLeave": {
+    "description": "In-room exit button"
+  },
+  "roomShare": "Share room",
+  "@roomShare": {
+    "description": "Host menu item: create a share link or QR code"
+  },
+  "roomBot": "Room bot",
+  "@roomBot": {
+    "description": "Host menu item: configure the room bot"
+  },
+  "roomDanmaku": "Danmaku settings",
+  "@roomDanmaku": {
+    "description": "Host menu item: bullet comments on/off, size, speed"
+  },
+  "roomScreenShare": "Share screen",
+  "@roomScreenShare": {
+    "description": "Host menu item: cast this phone's screen to the room"
+  },
+
+  "playerPlay": "Play",
+  "@playerPlay": {
+    "description": "Accessibility label of the play button"
+  },
+  "playerPause": "Pause",
+  "@playerPause": {
+    "description": "Accessibility label of the pause button"
+  },
+  "playerSeek": "Seek",
+  "@playerSeek": {
+    "description": "Accessibility label of the progress slider"
+  },
+  "playerQuality": "Quality",
+  "@playerQuality": {
+    "description": "Player bar button: pick a bitrate/quality"
+  },
+  "playerSubtitle": "Subtitles",
+  "@playerSubtitle": {
+    "description": "Player bar button: subtitle tracks and external files"
+  },
+  "playerFullscreen": "Full screen",
+  "@playerFullscreen": {
+    "description": "Player bar button: enter full screen"
+  },
+  "playerDanmaku": "Danmaku",
+  "@playerDanmaku": {
+    "description": "Player bar button: toggle bullet comments"
+  },
+  "playerVoice": "Voice",
+  "@playerVoice": {
+    "description": "Player and room bar button: join voice chat"
+  },
+
+  "tabHome": "Home",
+  "@tabHome": {
+    "description": "First item of the bottom navigation bar"
+  },
+  "tabSources": "Sources",
+  "@tabSources": {
+    "description": "Short title for source-related pages"
+  },
+  "tabLibrary": "My stuff",
+  "@tabLibrary": {
+    "description": "Second item of the bottom navigation bar: favorites, history, downloads"
+  },
+  "tabSettings": "Settings",
+  "@tabSettings": {
+    "description": "Title of the settings page"
+  },
+  "libFavorites": "Favorites",
+  "@libFavorites": {
+    "description": "First tab of My stuff: saved titles"
+  },
+  "libHistory": "History",
+  "@libHistory": {
+    "description": "Tab of My stuff: watch history timeline"
+  },
+  "libDownload": "Downloads",
+  "@libDownload": {
+    "description": "Tab of My stuff: the download queue"
+  },
+  "libFollow": "Follow",
+  "@libFollow": {
+    "description": "Favorite card menu item: follow this series"
+  },
+
+  "setTheme": "Appearance",
+  "@setTheme": {
+    "description": "Settings row: theme (system, light, dark)"
+  },
+  "setFont": "Text size",
+  "@setFont": {
+    "description": "Settings row: three text scale steps"
+  },
+  "setLanguage": "Language",
+  "@setLanguage": {
+    "description": "Settings row: UI language (system, Chinese, English)"
+  },
+  "setPower": "Battery and background",
+  "@setPower": {
+    "description": "Settings row: battery optimization allow-list and background notes"
+  },
+  "setDiagnose": "Diagnostics",
+  "@setDiagnose": {
+    "description": "Settings row: version, port, channels, room, recent errors"
+  },
+  "setUpdate": "Check for updates",
+  "@setUpdate": {
+    "description": "Settings row: check a self-hosted update feed"
+  },
+  "setBackup": "Backup and restore",
+  "@setBackup": {
+    "description": "Settings row: export or import a JSON backup"
+  },
+  "setPermission": "Permissions",
+  "@setPermission": {
+    "description": "Settings row: notifications, photos, camera, microphone, install apps"
+  },
+  "setAbout": "About",
+  "@setAbout": {
+    "description": "Settings row: version number and open-source notices"
+  },
+  "setChannel": "Preferred channel",
+  "@setChannel": {
+    "description": "Settings row: routing strategy (auto, tunnel only, LAN only, IPv6 only)"
+  }
+}
