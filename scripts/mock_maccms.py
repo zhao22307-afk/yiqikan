@@ -2,7 +2,8 @@
 """本地假 MacCMS 采集站（M4 验收用，不联网）。
 
 用法：python scripts/mock_maccms.py [端口] [素材目录]
-默认端口 8765，素材目录取 E:\\code\\_m0_tmp（用其中的 sample.mkv 当片源）。
+默认端口 8765，素材目录取环境变量 YQK_MEDIA_DIR，未设置则用仓库根目录下的 media/
+（放一个 sample.mkv 进去即可当片源）。
 
 接口：
   /api.php/provide/vod/?ac=detail&wd=test   搜索 test，固定返回 3 条
@@ -17,7 +18,12 @@ import sys
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8765
-MEDIA_DIR = sys.argv[2] if len(sys.argv) > 2 else r"E:\code\_m0_tmp"
+MEDIA_DIR = (
+    sys.argv[2]
+    if len(sys.argv) > 2
+    else os.environ.get("YQK_MEDIA_DIR")
+    or os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "media")
+)
 
 # 三条结果共用同一个素材，但集数/线路写成 MacCMS 的多层分隔格式：
 # vod_play_from 用 $$$ 分线路，vod_play_url 用 # 分集，每集用 $ 分「名|地址」

@@ -144,7 +144,8 @@ void main() {
     );
     expect(await e2.verify(), isTrue);
 
-    final File log = File('E:/code/_m0_tmp/m6_devices.log');
+    // 手动验收用：把设备抓到的 DeviceId 序列写在本文件旁边的 m6_devices.log
+    final File log = File('${Directory.current.path}/m6_devices.log');
     final List<String> ids = log.existsSync()
         ? log.readAsLinesSync().where((String s) => s.trim().isNotEmpty).toList()
         : <String>[];
