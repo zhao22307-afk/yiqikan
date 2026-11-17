@@ -1,0 +1,13 @@
+# 二进制文件不走文本 diff / 不尝试合并
+*.so     binary
+*.jar    binary
+*.aar    binary
+*.apk    binary
+*.aab    binary
+*.jks    binary
+*.png    binary
+*.jpg    binary
+*.webp   binary
+
+# 压缩过的 JS 不展开 diff
+*.min.js -diff
